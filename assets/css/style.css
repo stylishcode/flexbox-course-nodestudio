@@ -1,0 +1,70 @@
+.container {
+  height: 500px;
+  background-color: #ccc;
+  /* definindo um container como flex */
+  display: flex;
+  /* define a direção dos itens. Por padrão é row (linha) */
+  /* Outros valores são: column, row-reverse (itens da direita para a esquerda), column-reverse (itens na ordem reversa) */
+  flex-direction: row;
+  /* define se o itens vão ou não ter quebra de linha. Por padrão é nowrap */
+  /* Outros valores são: wrap-reverse (quebra, mas renderiza da esquerda pra direita) */
+  flex-wrap: nowrap;
+  /* forma resumida de escrever flex-direction e flex-wrap */
+  /* flex-flow: row wrap; */
+  /*Alinhamento horizontal. Por padrão é flex-start (esquerda para a direita)*/
+  /* Outros valores são: flex-end (direita para a esquerda), center, space-between (espaçamento entre os itens), space-around (espaçamento entre os itens, inclusive nas extremidades) */
+  justify-content: flex-start;
+  /* Alinhamento vertical. Por padrão é stretch (define que os itens cresçam igualmente)*/
+  /* Outros valores são: flex-start (alinha os itens verticalmente no topo), flex-end (alinha os itens verticalmente na parte inferior), center (alinha verticalmente no centro), baseline (alinha verticalmente baseado no conteudo de cada item) */
+  align-items: stretch;
+  /* Alinhamento vertical quando os itens estiverem em multiline, ou seja, quando tiverem uma quebra. Stretch é valor padrão, mas não pode ter altura definida */
+  align-content: stretch;
+}
+
+.item {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  margin: 5px;
+  /* Não ocupará o tamanho especificado se o flex-wrap for nowrap, irá ocupar 100% */
+  /* width: 30px; */
+  height: 30px;
+
+  /* Define o espaço extra que os itens vão tentar ocupar. Valor padrão é 0. Se 1, todos os itens tem a mesma largura dentro do limite do container. width sai */
+  flex-grow: 1;
+  /* Define a largura inicial dos itens */
+  flex-basis: 300px;
+  /* Capacidade de redução dos itens. Padrão é 0. Se 1, todos os itens terão a mesma proporção de redução dentro do container */
+  flex-shrink: 1;
+
+  /* Forma estenográfica das propriedades flex */
+  /* flex: grow shrink basis  */
+  flex: 1 1 300px;
+}
+
+
+.article-01 {
+  /* Define a ordem dos items dentro do container */
+  /* order: 3; */
+
+  /*Esse article vai tentar ocupar 3x mais espaço extra que os outros itens dentro do container. Se 2, ele vai tentar ocupar 2x mais espaço*/
+  /* flex-grow: 3; */
+  /* Esse article tem a capacidade de redução 3x maior que a dos demais articles */
+  flex-shrink: 3;
+}
+
+.article-02 {
+  /* order: 1; */
+  /* Alinhamento vertical individual */
+  /* Aceita os mesmos valores do justify-content */
+  align-self: flex-start;
+
+}
+
+.article-03 {
+  /* order: 2; */
+}
+
+.article-04 {
+  /* order: 4; */
+}
